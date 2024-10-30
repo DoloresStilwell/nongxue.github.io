@@ -1,46 +1,136 @@
----
-layout: page
-description: "「离开世界之前 一切都是过程」"
----
+<!DOCTYPE html>
+<html lang="en">
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {% if post.lang == 'en' %}
-                {{ post.content | strip_html | truncate:300 }}
-            {% else %}
-                {{ post.content | strip_html | truncate:200 }}
-            {% endif %}
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-</div>
-<hr>
-{% endfor %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
+    button {
+      padding: 10px;
+      border-radius: 20px;
+      text-align: center;
+      cursor: pointer;
+      background-color: antiquewhite;
+      width: 80%;
+      max-width: 100px;
+      height: 50px;
+      margin: 10px;
+    }
+
+    span {
+      margin-top: 5%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+      /* 水平居中 */
+      align-items: center;
+      /* 垂直居中 */
+      margin: 20px 0;
+      /* 上下留一点空隙 */
+    }
+
+    .search {
+      width: 70%;
+      /* 使用百分比宽度 */
+      max-width: 400px;
+      /* 限制最大宽度 */
+      height: 40px;
+      border-radius: 20px 0 0 20px;
+      /* 圆角 */
+      padding-left: 10px;
+      text-align: left;
+      border: 1px solid #ccc;
+      /* 添加边框 */
+    }
+
+    .search-btn {
+      background-color: white;
+      /* 按钮背景色 */
+      border: none;
+      /* 去掉按钮边框 */
+      border-radius: 0 20px 20px 0;
+      /* 圆角 */
+      cursor: pointer;
+      /* 鼠标悬停时为手形 */
+      display: flex;
+      /* 使按钮内部元素居中 */
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      /* 设置按钮宽度 */
+      height: 40px;
+      /* 设置按钮高度 */
+      margin-left: -1px;
+      /* 确保按钮和输入框之间无缝连接 */
+    }
+
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      /* 允许换行 */
+    }
+
+    /* 媒体查询 */
+    @media (max-width: 600px) {
+      button {
+        width: 90%;
+        /* 在小屏幕上按钮占用更大宽度 */
+        height: 40px;
+        /* 调整按钮高度 */
+      }
+
+      .search {
+        height: 40px;
+        /* 输入框高度 */
+      }
+
+      h1 {
+        font-size: 1.5em;
+        /* 调整标题大小 */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a onclick="alert('功能暂未开放')"><img width="40" height="40" src="./image/login.jpg" alt=""></a>
+
+  <span>
+    <h1>swfu2022农学</h1>
+  </span>
+  <div class="search-container">
+    <form action="https://www.baidu.com/s" method="GET" style="display: flex; align-items: center;">
+      <input class="search" type="text" name="wd" placeholder="搜索..." required>
+      <button class="search-btn" type="submit">
+        <img height="30" src="./image/search.png" alt="">
+      </button>
+    </form>
+  </div>
+  <div>
+    <a href="./三年级上.html"><button>班费查询</button></a>
+    <a href="./风采.html"><button>班级风采</button></a>
+    <a onclick="alert('功能暂未开放')"><button>设置</button></a>
+    <a onclick="alert('功能暂未开放')"><button>添加</button></a>
+  </div>
+</body>
+
+</html>
